@@ -1,3 +1,2 @@
-local t = {}
-getgenv().KEY = "TEST"
+local t = "TEST"
 return t
