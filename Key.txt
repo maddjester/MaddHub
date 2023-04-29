@@ -1,1 +1,3 @@
+local t = {}
 getgenv().KEY = "TEST"
+return t
