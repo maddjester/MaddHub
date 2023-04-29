@@ -1,1 +1,1 @@
-getgenv().KEY = TEST
+getgenv().KEY = "TEST"
