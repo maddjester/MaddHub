@@ -1,4 +1,4 @@
-<a href="https://maddhub.webador.com/">MaddHub</a> 
+<a href="https://maddhub.webador.com/">MaddHub Website</a> 
 
 A Roblox Script Hub supporting 10 games with more to come.
 Visit the MaddHub website for more detailed information.
