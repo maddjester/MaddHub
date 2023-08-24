@@ -7,5 +7,6 @@ Free Access with Ads, or you can reserve a private key if you subscribe in disco
 
 <a href="https://discord.com/servers/maddhub-official-906957649956991036">Maddhub Official Discord</a>
 
-
-
+<link>
+yarn
+https://maddhub.getkit.io/ GITBOOK_JWT_KEY= node ./server.js'
