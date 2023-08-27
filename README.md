@@ -6,6 +6,3 @@ Visit the MaddHub website for more detailed information.
 Maddhub Official Discord
 
 Free Access with Ads, or you can reserve a private key if you subscribe in discord.
-
-
-
