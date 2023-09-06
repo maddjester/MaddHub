@@ -1,4 +1,4 @@
-local keys = {
+keys = {
     "blah",
     "poop",
     "testing"
