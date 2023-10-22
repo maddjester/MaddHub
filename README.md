@@ -1,8 +1,6 @@
-MaddHub Website
+# MaddHub
 
-A Roblox Script Hub supporting 10 games with more to come.
-Visit the MaddHub website for more detailed information.
+## A Roblox Script Hub supporting 11 games with more to come.
+### Visit the MaddHub website for more detailed information.
 
-Maddhub Official Discord
-
-Free Access with Ads, or you can reserve a private key if you subscribe in discord.
+Free Access with Ads, alternatively Premium Subscription Keys are available for purchase in the discord server.
