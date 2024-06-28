@@ -2,6 +2,7 @@
 [![MaddHub Trailer](http://img.youtube.com/vi/046a0ojoIFI/0.jpg)](http://www.youtube.com/watch?v=046a0ojoIFI)
 
 # **This project is no longer being maintained.**
+## Feel free to fork it and modify and continue my legacy if you will...
 
 ## A Roblox Script Hub supporting 11 games. 
 ### Visit the MaddHub website for more detailed information.
