@@ -1,8 +1,12 @@
--- MaddHub.lua
+-- file: MaddHub.lua
+-- author: maddjester
+-- Inject Command: loadstring(game:HttpGet('https://raw.githubusercontent.com/maddjester/MaddHub/main/Source/main.lua'))()
+
+
 local Svc={Ws=game:GetService("Workspace"),Light=game:GetService("Lighting"),RepStor=game:GetService("ReplicatedStorage"),Plrs=game:GetService("Players"),MrkPlc=game:GetService("MarketplaceService"),VirtUsr=game:GetService("VirtualUser"),UsrInp=game:GetService("UserInputService"),RunSvc=game:GetService("RunService"),Core=game:GetService("CoreGui"),Vim=game:GetService("VirtualInputManager"),Tween=game:GetService("TweenService")}local Lp=Svc.Plrs.LocalPlayer;local Chr=Lp.Character;local Hum=Chr:WaitForChild("Humanoid")local HumRP=Chr:WaitForChild("HumanoidRootPart")local function false_if_dev()local devIds={4342810381,4320929007}local result=true;for _,devId in pairs(devIds)do if Lp.UserId==devId then result=false end end;return result end
 if not false_if_dev() then loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))() end
 local Icons={Intro="rbxassetid://14282025997",Character="rbxassetid://7992557358",Controller="rbxassetid://1557343445",Gear="rbxassetid://11385265073",Players="rbxassetid://11577689639",Money="rbxassetid://7939405279",Boss="rbxassetid://10653372143",Pet="rbxassetid://13001190533",Egg="rbxassetid://7939410236",Dojo="rbxassetid://11183649951",Runner="rbxassetid://9525535512",Inventory="rbxassetid://12166530009",Keyboard="rbxassetid://11738672671",Teleport="rbxassetid://6723742952",Quest="rbxassetid://12905962634",Server="rbxassetid://9692125126",Upgrade="rbxassetid://12338897538",Arm="rbxassetid://13769779209"}
-local CustomTheme={Main=Color3.fromRGB(0,0,0),Second=Color3.fromRGB(25,25,25),Stroke=Color3.fromRGB(60,140,255),Divider=Color3.fromRGB(0,150,225),Text=Color3.fromRGB(255,255,255),TextDark=Color3.fromRGB(60,140,255)}local Lib={Orion=loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))(),Esp=loadstring(game:HttpGet('https://sirius.menu/rayfield'))}local Gui={Settings={Name=Svc.MrkPlc:GetProductInfo(game.PlaceId).Name.." | MaddHub",HidePremium=false,SaveConfig=false_if_dev(),IntroEnabled=false_if_dev(),IntroIcon=Icons.Intro,IntroText="maddhub.webador.com",ConfigFolder="MaddHub_"..Lp.Name}}local Window=Lib.Orion:MakeWindow(Gui.Settings)Lib.Orion.Themes["Custom"],Lib.Orion.SelectedTheme=CustomTheme,"Custom"
+local CustomTheme={Main=Color3.fromRGB(0,0,0),Second=Color3.fromRGB(25,25,25),Stroke=Color3.fromRGB(60,140,255),Divider=Color3.fromRGB(0,150,225),Text=Color3.fromRGB(255,255,255),TextDark=Color3.fromRGB(60,140,255)}local syn = getgenv().syn; getgenv().syn = false; local Lib={Orion=loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))(),Esp=loadstring(game:HttpGet('https://sirius.menu/rayfield'))}getgenv().syn = syn; local Gui={Settings={Name=Svc.MrkPlc:GetProductInfo(game.PlaceId).Name.." | MaddHub",HidePremium=false,SaveConfig=false_if_dev(),IntroEnabled=false_if_dev(),IntroText="maddhub.webador.com",ConfigFolder="MaddHub_"..Lp.Name}}local Window=Lib.Orion:MakeWindow(Gui.Settings)Lib.Orion.Themes["Custom"],Lib.Orion.SelectedTheme=CustomTheme,"Custom"
 
 local function alert(name, msg, dur)
     Lib.Orion:MakeNotification({
@@ -25,7 +29,7 @@ local function sendMessage(Message, Recipients)
 end
 
 local function serverHop()
-    local module = loadstring(game:HttpGet"https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua")()
+    local module = loadstring(game:HttpGet('https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua'))()
     if game and module then
         task.spawn(function()
             module:Teleport(game.PlaceId)
@@ -273,21 +277,21 @@ end
 local function walkToPart(part, speaker)
 	if Lp.Character:FindFirstChildOfClass('Humanoid') and Lp.Character:FindFirstChildOfClass('Humanoid').SeatPart then
 		speaker.Character:FindFirstChildOfClass('Humanoid').Sit = false
-		wait(.1)
+		task.wait(.1)
 	end
 	Lp.Character:FindFirstChildOfClass('Humanoid').WalkToPoint = part.Position
 end
 
 local function walkToPos(pos)
 	if Lp.Character:FindFirstChildOfClass('Humanoid') and Lp.Character:FindFirstChildOfClass('Humanoid').SeatPart then
-		speaker.Character:FindFirstChildOfClass('Humanoid').Sit = false
-		wait(.1)
+		Lp.Character:FindFirstChildOfClass('Humanoid').Sit = false
+		task.wait(.1)
 	end
 	Lp.Character:FindFirstChildOfClass('Humanoid').WalkToPoint = pos
 end
 
 
-getgenv().makeHub = loadstring(game:HttpGet('https://raw.githubusercontent.com/maddjester/MaddHub/main/MaddHub.lua'))
+getgenv().makeHub = loadstring(game:HttpGet('https://raw.githubusercontent.com/maddjester/MaddHub/main/Source/main.lua'))
 
 repeat task.wait(1) until Svc.Ws.Gravity
 local gravReset, swimbeat
@@ -468,10 +472,10 @@ Binds[9] = {
 
 
 local CharTab = Window:MakeTab({
-    Name = "Character",
-    Icon = Icons.Character,
-    PremiumOnly = false
-})
+     Name = "Character",
+     Icon = Icons.Character,
+     PremiumOnly = false
+ })
 
 local ViewSect = CharTab:AddSection({
 	Name = "Camera Settings"
