@@ -1,6 +1,6 @@
 -- file: MaddHub.lua
 -- last update: 09/20/2024
--- author: maddjester https://github.com/maddjester/MaddHub
+-- author: maddjester
 -- Inject Command: loadstring(game:HttpGet('https://raw.githubusercontent.com/maddjester/MaddHub/main/Source/main.lua'))()
 
 
@@ -201,7 +201,7 @@ local function diedTP()
 end
 
 local function fullBright()
-    loadstring('https://raw.githubusercontent.com/maddjester/MaddHub/refs/heads/main/Source/Extras/fullbright.lua')()
+    loadstring('https://raw.githubusercontent.com/maddjester/MaddHub/refs/heads/main/Source/Extras/Fullbright.lua')()
 end
 
 local function getState(b)
