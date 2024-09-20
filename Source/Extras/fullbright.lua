@@ -15,7 +15,7 @@ if not _G.FullBrightExecuted then
 			_G.NormalLightingSettings.Brightness = game:GetService("Lighting").Brightness
 			if not _G.FullBrightEnabled then
 				repeat
-					wait()
+					task.wait()
 				until _G.FullBrightEnabled
 			end
 			game:GetService("Lighting").Brightness = 1
@@ -27,7 +27,7 @@ if not _G.FullBrightExecuted then
 			_G.NormalLightingSettings.ClockTime = game:GetService("Lighting").ClockTime
 			if not _G.FullBrightEnabled then
 				repeat
-					wait()
+					task.wait()
 				until _G.FullBrightEnabled
 			end
 			game:GetService("Lighting").ClockTime = 12
@@ -39,7 +39,7 @@ if not _G.FullBrightExecuted then
 			_G.NormalLightingSettings.FogEnd = game:GetService("Lighting").FogEnd
 			if not _G.FullBrightEnabled then
 				repeat
-					wait()
+					task.wait()
 				until _G.FullBrightEnabled
 			end
 			game:GetService("Lighting").FogEnd = 786543
@@ -51,7 +51,7 @@ if not _G.FullBrightExecuted then
 			_G.NormalLightingSettings.GlobalShadows = game:GetService("Lighting").GlobalShadows
 			if not _G.FullBrightEnabled then
 				repeat
-					wait()
+					task.wait()
 				until _G.FullBrightEnabled
 			end
 			game:GetService("Lighting").GlobalShadows = false
@@ -63,7 +63,7 @@ if not _G.FullBrightExecuted then
 			_G.NormalLightingSettings.Ambient = game:GetService("Lighting").Ambient
 			if not _G.FullBrightEnabled then
 				repeat
-					wait()
+					task.wait()
 				until _G.FullBrightEnabled
 			end
 			game:GetService("Lighting").Ambient = Color3.fromRGB(178, 178, 178)
@@ -77,11 +77,11 @@ if not _G.FullBrightExecuted then
 	game:GetService("Lighting").Ambient = Color3.fromRGB(178, 178, 178)
 
 	local LatestValue = true
-	spawn(function()
+	task.spawn(function()
 		repeat
-			wait()
+			task.wait()
 		until _G.FullBrightEnabled
-		while wait() do
+		while task.wait() do
 			if _G.FullBrightEnabled ~= LatestValue then
 				if not _G.FullBrightEnabled then
 					game:GetService("Lighting").Brightness = _G.NormalLightingSettings.Brightness

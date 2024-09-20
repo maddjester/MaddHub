@@ -60,7 +60,7 @@ local function sendMessage(Message, Recipients)
 end
 
 local function serverHop()
-    local module = loadstring(game:HttpGet('https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua'))()
+    local module = loadstring(game:HttpGet('https://raw.githubusercontent.com/maddjester/MaddHub/refs/heads/main/Source/Extras/serverhop.lua'))()
     if game and module then
         task.spawn(function()
             module:Teleport(game.PlaceId)
@@ -201,7 +201,7 @@ local function diedTP()
 end
 
 local function fullBright()
-    loadstring('https://raw.githubusercontent.com/maddjester/MaddHub/refs/heads/main/Source/Extras/Fullbright.lua')()
+    loadstring('https://raw.githubusercontent.com/maddjester/MaddHub/refs/heads/main/Source/Extras/fullbright.lua')()
 end
 
 local function getState(b)
