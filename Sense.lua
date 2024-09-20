@@ -1,3 +1,4 @@
+---@diagnostic disable: deprecated
 -- 1. Load the library
 local Sense = loadstring(game:HttpGet('https://sirius.menu/sense'))()
 
