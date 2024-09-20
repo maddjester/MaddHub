@@ -7628,12 +7628,12 @@ elseif game.PlaceId == 6263431107 then -- Imposters and Roles
                 if v.bin.Role == "Imposter" and v.bin.SubRole == "Bomber" then
                     warn("Bomber Found")
                     -- Fix this
-                    if #BombsPlanted:GetChildren() > 0 then
-                        warn("Bomb(s) Detected")
-                        for _, b in pairs(v.GameTemp.BombsPlanted:GetChildren()) do
-                            print(v.Value.Name)
-                        end
-                    end
+                    -- if #BombsPlanted:GetChildren() > 0 then
+                    --     warn("Bomb(s) Detected")
+                    --     for _, b in pairs(v.GameTemp.BombsPlanted:GetChildren()) do
+                    --         print(v.Value.Name)
+                    --     end
+                    -- end
                 end
             end
         end)
