@@ -5255,6 +5255,7 @@ elseif game.PlaceId == 12017032683 then -- 096: SCP
 
     local function toolAction()
         Svc.RepStor:WaitForChild("Remotes"):WaitForChild("ToolAction"):FireServer()
+        task.wait(3)
     end
 
     local function equipTool(toolName)
@@ -5267,7 +5268,7 @@ elseif game.PlaceId == 12017032683 then -- 096: SCP
                 [3] = "Tool"
             }
             Svc.RepStor:WaitForChild("Remotes"):WaitForChild("Backpack"):FireServer(unpack(args))
-            task.wait(0.1)
+            task.wait(3)
         end
     end
 
@@ -5296,7 +5297,7 @@ elseif game.PlaceId == 12017032683 then -- 096: SCP
                         Chr:PivotTo(v:GetPivot())
                         if not getgenv().FARM then break end
                         toolAction()
-                        task.wait(0.2)
+                        task.wait(2)
                     end
                 end
             end
