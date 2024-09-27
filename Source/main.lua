@@ -5151,6 +5151,8 @@ elseif game.PlaceId == 11542692507 then -- Anime Souls Simulator
         end
     })
 elseif game.PlaceId == 12017032683 then -- 096: SCP
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/maddjester/MaddHub/refs/heads/main/Games/096%20%5BSCP%5D/script.lua"))()
+    --[[
     -- Values
 
 
@@ -5422,6 +5424,7 @@ elseif game.PlaceId == 12017032683 then -- 096: SCP
             end
         end
     })
+    ]]
 elseif game.PlaceId == 10534865425 then -- Hoop Simulator
     local function patchNotice()
         alert("Features Disabled...",
