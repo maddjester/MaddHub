@@ -4,35 +4,79 @@
 -- Inject Command: loadstring(game:HttpGet('https://raw.githubusercontent.com/maddjester/MaddHub/main/Source/main.lua'))()
 
 
-local Svc = { Ws = game:GetService("Workspace"), Light = game:GetService("Lighting"), RepStor = game:GetService(
-"ReplicatedStorage"), Plrs = game:GetService("Players"), MrkPlc = game:GetService("MarketplaceService"), VirtUsr = game
-:GetService("VirtualUser"), UsrInp = game:GetService("UserInputService"), RunSvc = game:GetService("RunService"), Core =
-game:GetService("CoreGui"), Vim = game:GetService("VirtualInputManager"), Tween = game:GetService("TweenService") }
+local Svc = {
+    Ws = game:GetService("Workspace"),
+    Light = game:GetService("Lighting"),
+    RepStor = game:GetService(
+        "ReplicatedStorage"),
+    Plrs = game:GetService("Players"),
+    MrkPlc = game:GetService("MarketplaceService"),
+    VirtUsr = game
+        :GetService("VirtualUser"),
+    UsrInp = game:GetService("UserInputService"),
+    RunSvc = game:GetService("RunService"),
+    Core =
+        game:GetService("CoreGui"),
+    Vim = game:GetService("VirtualInputManager"),
+    Tween = game:GetService("TweenService")
+}
 
 local Lp = Svc.Plrs.LocalPlayer; local Chr = Lp.Character; local Hum = Chr:WaitForChild("Humanoid")
 local HumRP = Chr:WaitForChild("HumanoidRootPart")
 local function false_if_dev()
     local devIds = { 4342810381, 4320929007 }
     local result = true; for _, devId in pairs(devIds) do if Lp.UserId == devId then result = false end end; return
-    result
+        result
 end
 
-if not false_if_dev() then loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))() end
-local Icons = { Intro = "rbxassetid://14282025997", Character = "rbxassetid://7992557358", Controller =
-"rbxassetid://1557343445", Gear = "rbxassetid://11385265073", Players = "rbxassetid://11577689639", Money =
-"rbxassetid://7939405279", Boss = "rbxassetid://10653372143", Pet = "rbxassetid://13001190533", Egg =
-"rbxassetid://7939410236", Dojo = "rbxassetid://11183649951", Runner = "rbxassetid://9525535512", Inventory =
-"rbxassetid://12166530009", Keyboard = "rbxassetid://11738672671", Teleport = "rbxassetid://6723742952", Quest =
-"rbxassetid://12905962634", Server = "rbxassetid://9692125126", Upgrade = "rbxassetid://12338897538", Arm =
-"rbxassetid://13769779209" }
+if not false_if_dev() then
+    loadstring(game:HttpGet(
+        'https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end
+local Icons = {
+    Intro = "rbxassetid://14282025997",
+    Character = "rbxassetid://7992557358",
+    Controller =
+    "rbxassetid://1557343445",
+    Gear = "rbxassetid://11385265073",
+    Players = "rbxassetid://11577689639",
+    Money =
+    "rbxassetid://7939405279",
+    Boss = "rbxassetid://10653372143",
+    Pet = "rbxassetid://13001190533",
+    Egg =
+    "rbxassetid://7939410236",
+    Dojo = "rbxassetid://11183649951",
+    Runner = "rbxassetid://9525535512",
+    Inventory =
+    "rbxassetid://12166530009",
+    Keyboard = "rbxassetid://11738672671",
+    Teleport = "rbxassetid://6723742952",
+    Quest =
+    "rbxassetid://12905962634",
+    Server = "rbxassetid://9692125126",
+    Upgrade = "rbxassetid://12338897538",
+    Arm =
+    "rbxassetid://13769779209"
+}
 
-local CustomTheme = { Main = Color3.fromRGB(0, 0, 0), Second = Color3.fromRGB(25, 25, 25), Stroke = Color3.fromRGB(60,
-    140, 255), Divider = Color3.fromRGB(0, 150, 225), Text = Color3.fromRGB(255, 255, 255), TextDark = Color3.fromRGB(60,
-    140, 255) }
+local CustomTheme = {
+    Main = Color3.fromRGB(0, 0, 0),
+    Second = Color3.fromRGB(25, 25, 25),
+    Stroke = Color3.fromRGB(60,
+        140, 255),
+    Divider = Color3.fromRGB(0, 150, 225),
+    Text = Color3.fromRGB(255, 255, 255),
+    TextDark = Color3.fromRGB(60,
+        140, 255)
+}
 
-local syn = getgenv().syn; getgenv().syn = false; local Lib = { Orion = loadstring(game:HttpGet(
-'https://raw.githubusercontent.com/jensonhirst/Orion/refs/heads/main/source'))(), Esp = loadstring(game:HttpGet(
-'https://sirius.menu/rayfield')) }
+local syn = getgenv().syn; getgenv().syn = false; local Lib = {
+    Orion = loadstring(game:HttpGet(
+        'https://raw.githubusercontent.com/jensonhirst/Orion/refs/heads/main/source'))(),
+    Esp = loadstring(game:HttpGet(
+        'https://sirius.menu/rayfield'))
+}
 
 getgenv().syn = syn; local Gui = { Settings = { Name = "MaddHub", HidePremium = false, SaveConfig = false_if_dev(), IntroEnabled = false_if_dev(), IntroText = "maddhub.webador.com", ConfigFolder = "MaddHub_" .. Lp.Name } }
 
@@ -60,7 +104,8 @@ local function sendMessage(Message, Recipients)
 end
 
 local function serverHop()
-    local module = loadstring(game:HttpGet('https://raw.githubusercontent.com/maddjester/MaddHub/refs/heads/main/Source/Extras/serverhop.lua'))()
+    local module = loadstring(game:HttpGet(
+        'https://raw.githubusercontent.com/maddjester/MaddHub/refs/heads/main/Source/Extras/serverhop.lua'))()
     if game and module then
         task.spawn(function()
             module:Teleport(game.PlaceId)
@@ -314,11 +359,11 @@ local function walkToPart(part, speaker)
 end
 
 local function walkToPos(pos)
-	if Lp.Character:FindFirstChildOfClass('Humanoid') and Lp.Character:FindFirstChildOfClass('Humanoid').SeatPart then
-		Lp.Character:FindFirstChildOfClass('Humanoid').Sit = false
-		task.wait(.1)
-	end
-	Lp.Character:FindFirstChildOfClass('Humanoid').WalkToPoint = pos
+    if Lp.Character:FindFirstChildOfClass('Humanoid') and Lp.Character:FindFirstChildOfClass('Humanoid').SeatPart then
+        Lp.Character:FindFirstChildOfClass('Humanoid').Sit = false
+        task.wait(.1)
+    end
+    Lp.Character:FindFirstChildOfClass('Humanoid').WalkToPoint = pos
 end
 
 
@@ -374,7 +419,7 @@ end
 
 local function getRoot(char)
     local rootPart = char:FindFirstChild('HumanoidRootPart') or char:FindFirstChild('Torso') or
-    char:FindFirstChild('UpperTorso')
+        char:FindFirstChild('UpperTorso')
     return rootPart
 end
 
@@ -537,7 +582,7 @@ ChrSect:AddButton({
         local names = { "Bob", "Kevin", "Ron", "Alice", "Eve", "Charlie", "David", "Becky", "Sue", "Jeremy", "Chris",
             "Natalia" }
         local name = names[math.random(#names)] ..
-        randString() .. "_" .. tostring(math.floor(os.time() / math.random(10, 400)))
+            randString() .. "_" .. tostring(math.floor(os.time() / math.random(10, 400)))
         game:GetService("Players").LocalPlayer.DisplayName = name
         game:GetService("Players").LocalPlayer:WaitForChild("Character"):FindFirstChild("Humanoid").DisplayName = name
     end
@@ -871,7 +916,7 @@ if game.PlaceId == 3956818381 then -- Ninja Legends
                 if not getgenv().AUTOBOSS then break end
                 if Chr and bossFolder:FindFirstChild(name) then
                     Chr:PivotTo(bossFolder:FindFirstChild(name):FindFirstChild("HumanoidRootPart").CFrame +
-                    Vector3.new(0, 12, 0))
+                        Vector3.new(0, 12, 0))
                 end
             end
         end)
@@ -3217,13 +3262,13 @@ elseif game.PlaceId == 6953291455 then -- Eating Simulator
 
     local function buyAll(item)
         local r = Svc.RepStor:WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild(
-        "RE"):WaitForChild("buyAll")
+            "RE"):WaitForChild("buyAll")
         r:FireServer(item)
     end
 
     local function buyRank()
         local r = Svc.RepStor:WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild(
-        "RE")
+            "RE")
         local Ranks = Lp.PlayerGui.Main.Frames.Shop.Categories.Ranks:FindFirstChildWhichIsA("ScrollingFrame")
         local results = {}
         for _, v in ipairs(Ranks:GetChildren()) do
@@ -3238,7 +3283,9 @@ elseif game.PlaceId == 6953291455 then -- Eating Simulator
                 task.wait(1)
                 r:WaitForChild("equip"):FireServer(v, "Ranks")
                 Lp.PlayerGui.Main.Frames.Store.Visible = false
-                -- game:GetService("CoreGui").PurchasePrompt.Enabled = false
+                if Core.PurchasePrompt then
+                    Core.PurchasePrompt.Enabled = false
+                end
                 buyNext = false
             end
             if v == Lp.Data.EquippedRank.Value then
@@ -3435,7 +3482,7 @@ elseif game.PlaceId == 11040063484 then -- Sword Fighters Simulator
 
     Codes = {
         Remote = Svc.RepStor:WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild(
-        "CodeService"):WaitForChild("RF"):WaitForChild("RedeemCode"),
+            "CodeService"):WaitForChild("RF"):WaitForChild("RedeemCode"),
         List = {
             "GetRich",
             "Secret",
@@ -3776,9 +3823,9 @@ elseif game.PlaceId == 11040063484 then -- Sword Fighters Simulator
 
     local function actionQuest()
         local r1 = Svc.RepStor:WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild(
-        "ShopService"):WaitForChild("RF"):WaitForChild("SelectGift")
+            "ShopService"):WaitForChild("RF"):WaitForChild("SelectGift")
         local r2 = Svc.RepStor:WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild(
-        "QuestService"):WaitForChild("RF"):WaitForChild("ActionQuest")
+            "QuestService"):WaitForChild("RF"):WaitForChild("ActionQuest")
         if r1 and r2 then
             for _, v in getQuestDummies() do
                 r1:InvokeServer()
@@ -3844,7 +3891,7 @@ elseif game.PlaceId == 11040063484 then -- Sword Fighters Simulator
 
     local function buyEgg(Name)
         local r = Svc.RepStor:WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild(
-        "EggService"):WaitForChild("RF"):WaitForChild("BuyEgg")
+            "EggService"):WaitForChild("RF"):WaitForChild("BuyEgg")
         if r then
             local Eggs = {
                 ["Weak Egg"] = 1,
@@ -3889,7 +3936,7 @@ elseif game.PlaceId == 11040063484 then -- Sword Fighters Simulator
 
     local function autoBuyEggs()
         local eggMod = require(game:GetService("ReplicatedStorage").ClientModules.Controllers.AfterLoad
-        .EggOpenController)
+            .EggOpenController)
         task.spawn(function()
             while task.wait() do
                 if not getgenv().BUYEGGS then break end
@@ -4009,7 +4056,7 @@ elseif game.PlaceId == 11040063484 then -- Sword Fighters Simulator
 
     local function continueDungeon()
         local r = Svc.RepStor:WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild(
-        "DungeonService"):WaitForChild("RF"):WaitForChild("ContinueDungeon")
+            "DungeonService"):WaitForChild("RF"):WaitForChild("ContinueDungeon")
         if r then
             local UIDs = {}
             for _, v in pairs(Svc.Ws.Live.Dungeons:GetDescendants()) do
@@ -5929,8 +5976,8 @@ elseif game.PlaceId == 13127800756 then -- Arm Wrestle Simulator
 
     Codes = {
         Remote = Svc.RepStor:WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7")
-        :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("CodeRedemptionService"):WaitForChild("RE")
-        :WaitForChild("onRedeem"),
+            :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("CodeRedemptionService"):WaitForChild("RE")
+            :WaitForChild("onRedeem"),
         List = {
             '200m ',
             'enchant ',
@@ -5967,8 +6014,8 @@ elseif game.PlaceId == 13127800756 then -- Arm Wrestle Simulator
 
     local function autoClaimEggs() -- Claim event eggs
         local r = Svc.RepStor:WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7")
-        :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("EventService"):WaitForChild("RF"):WaitForChild(
-        "ClaimEgg")
+            :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("EventService"):WaitForChild("RF"):WaitForChild(
+                "ClaimEgg")
         if r then
             task.spawn(function()
                 while task.wait(10) do
@@ -6009,8 +6056,9 @@ elseif game.PlaceId == 13127800756 then -- Arm Wrestle Simulator
             [4] = false
         }
         game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild(
-        "sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("EggService"):WaitForChild(
-        "RF"):WaitForChild("purchaseEgg"):InvokeServer(unpack(args))
+            "sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("EggService")
+            :WaitForChild(
+                "RF"):WaitForChild("purchaseEgg"):InvokeServer(unpack(args))
     end
 
     local function autoBuyEggs()
@@ -6042,8 +6090,8 @@ elseif game.PlaceId == 13127800756 then -- Arm Wrestle Simulator
 
     local function equipArm(name)
         local r = Svc.RepStor:WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7")
-        :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("ArmsService"):WaitForChild("RF"):WaitForChild(
-        "EquipArm")
+            :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("ArmsService"):WaitForChild("RF"):WaitForChild(
+                "EquipArm")
         if r then
             r:InvokeServer(name)
         end
@@ -6060,8 +6108,8 @@ elseif game.PlaceId == 13127800756 then -- Arm Wrestle Simulator
 
     local function autoOpenCrates()
         local r = Svc.RepStor:WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7")
-        :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("ArmsService"):WaitForChild("RF"):WaitForChild(
-        "RollAllCratesForPlayer")
+            :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("ArmsService"):WaitForChild("RF"):WaitForChild(
+                "RollAllCratesForPlayer")
         if r then
             task.spawn(function()
                 while task.wait(15) do
@@ -6074,8 +6122,8 @@ elseif game.PlaceId == 13127800756 then -- Arm Wrestle Simulator
 
     local function spinWheel()
         local r = Svc.RepStor:WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7")
-        :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("SpinService"):WaitForChild("RE"):WaitForChild(
-        "onSpinRequest")
+            :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("SpinService"):WaitForChild("RE"):WaitForChild(
+                "onSpinRequest")
         if r then
             r:FireServer()
         end
@@ -6114,11 +6162,13 @@ elseif game.PlaceId == 13127800756 then -- Arm Wrestle Simulator
 
     local function autoRebirth()
         local r_1 = Svc.RepStor:WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7")
-        :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("RebirthService"):WaitForChild("RE"):WaitForChild(
-        "onSuperRebirth")
+            :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("RebirthService"):WaitForChild("RE")
+            :WaitForChild(
+                "onSuperRebirth")
         local r_2 = Svc.RepStor:WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7")
-        :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("RebirthService"):WaitForChild("RE"):WaitForChild(
-        "onRebirthRequest")
+            :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("RebirthService"):WaitForChild("RE")
+            :WaitForChild(
+                "onRebirthRequest")
         task.spawn(function()
             while task.wait(5) do
                 if not getgenv().REBIRTH then break end
@@ -6141,8 +6191,9 @@ elseif game.PlaceId == 13127800756 then -- Arm Wrestle Simulator
 
     local function getTrails()
         local r = Svc.RepStor:WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7")
-        :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("PurchaseService"):WaitForChild("RE"):WaitForChild(
-        "onPurchaseRequest")
+            :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("PurchaseService"):WaitForChild("RE")
+            :WaitForChild(
+                "onPurchaseRequest")
         if r then
             local Trails = Svc.RepStor.Trails
             for _, v in pairs(Trails:GetChildren()) do
@@ -6180,11 +6231,11 @@ elseif game.PlaceId == 13127800756 then -- Arm Wrestle Simulator
 
     local function claimAllRewards()
         local r = Svc.RepStor:WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7")
-        :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("TimedRewardService"):WaitForChild("RE")
-        :WaitForChild("onClaim")
+            :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("TimedRewardService"):WaitForChild("RE")
+            :WaitForChild("onClaim")
         local r2 = Svc.RepStor:WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7")
-        :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("DailyRewardService"):WaitForChild("RE")
-        :WaitForChild("onClaimReward")
+            :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("DailyRewardService"):WaitForChild("RE")
+            :WaitForChild("onClaimReward")
         if r then
             for i = 1, 12 do
                 r:FireServer(i)
@@ -6208,8 +6259,8 @@ elseif game.PlaceId == 13127800756 then -- Arm Wrestle Simulator
 
     local function useBoosts()
         local r = Svc.RepStor:WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7")
-        :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("BoostService"):WaitForChild("RE"):WaitForChild(
-        "useBoost")
+            :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("BoostService"):WaitForChild("RE"):WaitForChild(
+                "useBoost")
         if r then
             local b = { "Wins", "Luck", "Void", "Golden" }
             for _, v in next, b do
@@ -6229,8 +6280,8 @@ elseif game.PlaceId == 13127800756 then -- Arm Wrestle Simulator
 
     local function equipBest()
         local r = Svc.RepStor:WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7")
-        :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("PetService"):WaitForChild("RF"):WaitForChild(
-        "equipBest")
+            :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("PetService"):WaitForChild("RF"):WaitForChild(
+                "equipBest")
         if r then
             r:InvokeServer(Lp)
         end
@@ -6257,8 +6308,9 @@ elseif game.PlaceId == 13127800756 then -- Arm Wrestle Simulator
 
     local function clickTable()
         local r = Svc.RepStor:WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7")
-        :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("ArmWrestleService"):WaitForChild("RE"):WaitForChild(
-        "onClickRequest")
+            :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("ArmWrestleService"):WaitForChild("RE")
+            :WaitForChild(
+                "onClickRequest")
         if r and Lp:GetAttribute("BarOpen") then
             repeat
                 if not getgenv().AUTOFIGHT then break end
@@ -6308,7 +6360,7 @@ elseif game.PlaceId == 13127800756 then -- Arm Wrestle Simulator
 
     local function getZoneModels() -- Returns ordered list of NPC's in the current zone
         local NPCFolder = Svc.Ws.Zones:WaitForChild(CurrentZone):WaitForChild("Interactables"):WaitForChild(
-        "ArmWrestling"):WaitForChild("NPC")
+            "ArmWrestling"):WaitForChild("NPC")
         local results = {}
         for _, v in pairs(NPCFolder:GetDescendants()) do
             if v.ClassName == "TextLabel" and v.Name == "Tier" then
@@ -6331,7 +6383,7 @@ elseif game.PlaceId == 13127800756 then -- Arm Wrestle Simulator
 
     local function fightOnce(model) -- Returns wins after fighting NPC
         local Prompt = Svc.Ws.Zones[CurrentZone].Interactables.ArmWrestling.NPC[model.Name].Table.Proximity.Attachment
-        :FindFirstChildOfClass("ProximityPrompt")
+            :FindFirstChildOfClass("ProximityPrompt")
         if Prompt then
             repeat
                 if Prompt then
@@ -6432,8 +6484,8 @@ elseif game.PlaceId == 13127800756 then -- Arm Wrestle Simulator
 
     local function fireGoldify(Matches)
         local r = Svc.RepStor:WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7")
-        :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("PetService"):WaitForChild("RF"):WaitForChild(
-        "goldify")
+            :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("PetService"):WaitForChild("RF"):WaitForChild(
+                "goldify")
         if r then
             r:InvokeServer(Matches)
         end
@@ -6477,8 +6529,8 @@ elseif game.PlaceId == 13127800756 then -- Arm Wrestle Simulator
 
     local function tpTo(Name)
         local r = Svc.RepStor:WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7")
-        :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("ZoneService"):WaitForChild("RE"):WaitForChild(
-        "teleport")
+            :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("ZoneService"):WaitForChild("RE"):WaitForChild(
+                "teleport")
         local Zone = {
             ["School"] = "BackToSchool",
             ["Gym"] = "Futuristic",
@@ -6498,14 +6550,14 @@ elseif game.PlaceId == 13127800756 then -- Arm Wrestle Simulator
 
     local function tpAll()
         local r = Svc.RepStor:WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7")
-        :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("ZoneService"):WaitForChild("RE"):WaitForChild(
-        "teleport")
+            :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("ZoneService"):WaitForChild("RE"):WaitForChild(
+                "teleport")
         local Names = { [1] = "BackToSchool", [2] = "Futuristic", [3] = "Beach", [4] = "NuclearBunker", [5] = "DinoWorld" }
         if r then
             if tonumber(CurrentZone) < #Names then
                 local n = CurrentZone + 1
                 local p = Svc.Ws:WaitForChild("Zones"):FindFirstChild(n):FindFirstChild("Interactables"):FindFirstChild(
-                "Teleports"):FindFirstChild("Locations"):FindFirstChild(Names[n])
+                    "Teleports"):FindFirstChild("Locations"):FindFirstChild(Names[n])
                 if p then
                     r:FireServer(p)
                     task.wait(3)
@@ -6527,8 +6579,8 @@ elseif game.PlaceId == 13127800756 then -- Arm Wrestle Simulator
     local function buyCrates(Type, Quanity) -- Buy the specified amount and type of crates
         local args = { [1] = Type, [2] = Quanity }
         local r = Svc.RepStor:WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7")
-        :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("ArmsService"):WaitForChild("RF"):WaitForChild(
-        "PurchaseCrates")
+            :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("ArmsService"):WaitForChild("RF"):WaitForChild(
+                "PurchaseCrates")
         if r then
             r:InvokeServer(unpack(args))
         end
@@ -6546,8 +6598,8 @@ elseif game.PlaceId == 13127800756 then -- Arm Wrestle Simulator
     local function evolveArms(Arms) -- Evolves specified arms names
         local Arms = { Arms }
         local r = Svc.RepStor:WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7")
-        :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("ArmsService"):WaitForChild("RF"):WaitForChild(
-        "EvolveArms")
+            :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("ArmsService"):WaitForChild("RF"):WaitForChild(
+                "EvolveArms")
         if r then
             r:InvokeServer(unpack(Arms))
         end
@@ -6555,8 +6607,8 @@ elseif game.PlaceId == 13127800756 then -- Arm Wrestle Simulator
 
     local function ownedArms()
         return Svc.RepStor:WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7")
-        :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("ArmsService"):WaitForChild("RF"):WaitForChild(
-        "getOwned"):InvokeServer(Lp)
+            :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("ArmsService"):WaitForChild("RF"):WaitForChild(
+                "getOwned"):InvokeServer(Lp)
     end
 
     local function tryEvolveArms()
@@ -6590,8 +6642,9 @@ elseif game.PlaceId == 13127800756 then -- Arm Wrestle Simulator
 
     local function fireVoidify(Name)
         local r = Svc.RepStor:WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7")
-        :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("PetVoidService"):WaitForChild("RE"):WaitForChild(
-        "onCraftToVoid")
+            :WaitForChild("knit"):WaitForChild("Services"):WaitForChild("PetVoidService"):WaitForChild("RE")
+            :WaitForChild(
+                "onCraftToVoid")
         if r then
             r:FireServer(Name)
         end
@@ -7356,7 +7409,7 @@ elseif game.PlaceId == 6263431107 then -- Imposters and Roles
                     if role and subRole then
                         n.NameLabel.Text = "[" .. subRole .. "] " .. v.Name
                         local roleColor = Svc.RepStor:FindFirstChild("Roles"):FindFirstChild(subRole):FindFirstChild(
-                        "BookInfo"):FindFirstChild("BackgroundColor")
+                            "BookInfo"):FindFirstChild("BackgroundColor")
                         if roleColor then
                             n.NameLabel.TextColor3 = roleColor.Value
                         end
@@ -7379,7 +7432,7 @@ elseif game.PlaceId == 6263431107 then -- Imposters and Roles
     local function skip()
         local args = {
             [1] = game:GetService("ReplicatedStorage"):WaitForChild("Settings"):WaitForChild("Game"):WaitForChild(
-            "Discussion"):WaitForChild("SkipPointer")
+                "Discussion"):WaitForChild("SkipPointer")
         }
         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("Vote"):FireServer(unpack(args))
     end
@@ -7388,7 +7441,7 @@ elseif game.PlaceId == 6263431107 then -- Imposters and Roles
         if not getgenv().AUTOVOTE then return end
         local args = {
             [1] = game:GetService("ReplicatedStorage"):WaitForChild("Game"):WaitForChild("Discussion"):WaitForChild(
-            "Players"):WaitForChild(name)
+                "Players"):WaitForChild(name)
         }
         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("Vote"):FireServer(unpack(args))
     end
@@ -7398,12 +7451,15 @@ elseif game.PlaceId == 6263431107 then -- Imposters and Roles
         local pre = { "is ", "it is ", "it's ", "imposter is ", "i think is ", "OMG ", "bruh gotta be ", "i saw ",
             "i know its ", "it " }
         local suf = { " was in the room", " is sus", " is a imposter", " was chasing me", " was near body", " vented" }
-        local fix = { [1] = tostring(pre[math.random(1, #pre)] .. colorName), [2] = tostring(colorName ..
-        suf[math.random(1, #suf)]) }
+        local fix = {
+            [1] = tostring(pre[math.random(1, #pre)] .. colorName),
+            [2] = tostring(colorName ..
+                suf[math.random(1, #suf)])
+        }
         local s = fix[math.random(1, #fix)]
         local strings = { [1] = s:upper(), [2] = s:lower() }
         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("SendGameMessage"):FireServer(
-        strings[math.random(1, #strings)])
+            strings[math.random(1, #strings)])
     end
 
     local function getColor(int)
@@ -7448,7 +7504,7 @@ elseif game.PlaceId == 6263431107 then -- Imposters and Roles
         local Temp = game:GetService("Players").LocalPlayer.PlayerGui.Temp
         if Bin.Alive.Value then
             local Players = Temp:WaitForChild("DiscussGui"):FindFirstChild("MeetingFrame"):FindFirstChild("DiscussLabel")
-            :FindFirstChild("Players")
+                :FindFirstChild("Players")
             for _, v in pairs(Players:GetDescendants()) do
                 if v.Name == "NameLabel" then
                     local player = game:GetService("Players"):FindFirstChild(v.Parent.Name)
@@ -7478,7 +7534,7 @@ elseif game.PlaceId == 6263431107 then -- Imposters and Roles
                 [1] = player
             }
             game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("Kill"):InvokeServer(unpack(
-            args))
+                args))
         end
     end
 
@@ -7642,7 +7698,7 @@ elseif game.PlaceId == 6263431107 then -- Imposters and Roles
 
     local function digGrave()
         local g = game:GetService("Workspace"):FindFirstChild("GraveyardRoom"):FindFirstChild("Functional")
-        :FindFirstChild("Grave")
+            :FindFirstChild("Grave")
         if g then
             g:WaitForChild("Interact"):InvokeServer(g)
             repeat task.wait(1) until g:FindFirstChild("OpenGrave")
@@ -7724,7 +7780,7 @@ elseif game.PlaceId == 6263431107 then -- Imposters and Roles
         local imp = getImposters()
         for i = 1, #imp do
             local nameLabel = Lp.PlayerGui.Temp:WaitForChild("DiscussGui").MeetingFrame.DiscussLabel.Players
-            :FindFirstChild(imp[i])
+                :FindFirstChild(imp[i])
             if nameLabel then
                 nameLabel.ImposterLabel.Visible = true
             end
@@ -7827,7 +7883,7 @@ elseif game.PlaceId == 6263431107 then -- Imposters and Roles
                             tweenTo(pos, 3, Lp)
                             walkToPos(pos)
                             clickAbs(Lp.PlayerGui.GameGui:WaitForChild("ObjectInteractionsGui"):WaitForChild(
-                            "InteractButton"))
+                                "InteractButton"))
                         end
                     end
                 end
@@ -7935,7 +7991,7 @@ elseif game.PlaceId == 6263431107 then -- Imposters and Roles
                     if d and p then
                         moveTo(Hum, p,
                             game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild(
-                            "DebugUseWeapon"):InvokeServer(d)):Wait()
+                                "DebugUseWeapon"):InvokeServer(d)):Wait()
                     end
                 end
             end
