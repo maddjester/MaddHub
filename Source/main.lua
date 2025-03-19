@@ -34,7 +34,7 @@ local syn = getgenv().syn; getgenv().syn = false; local Lib = { Orion = loadstri
 'https://raw.githubusercontent.com/jensonhirst/Orion/refs/heads/main/source'))(), Esp = loadstring(game:HttpGet(
 'https://sirius.menu/rayfield')) }
 
-getgenv().syn = syn; local Gui = { Settings = { Name = Svc.MrkPlc:GetProductInfo(game.PlaceId).Name .. " | MaddHub", HidePremium = false, SaveConfig = false_if_dev(), IntroEnabled = false_if_dev(), IntroText = "maddhub.webador.com", ConfigFolder = "MaddHub_" .. Lp.Name } }
+getgenv().syn = syn; local Gui = { Settings = { Name = "MaddHub", HidePremium = false, SaveConfig = false_if_dev(), IntroEnabled = false_if_dev(), IntroText = "maddhub.webador.com", ConfigFolder = "MaddHub_" .. Lp.Name } }
 
 local Window = Lib.Orion:MakeWindow(Gui.Settings)
 Lib.Orion.Themes["Custom"], Lib.Orion.SelectedTheme = CustomTheme, "Custom"
@@ -450,7 +450,7 @@ Binds[4] = {
     Default = Enum.KeyCode.F4,
     Hold = false,
     Callback = function()
-        alert(Svc.MrkPlc:GetProductInfo(game.PlaceId).Name, "Hopping to a new server...")
+        alert("HOP", "Hopping to a new server...")
         serverHop()
     end
 }
@@ -749,15 +749,15 @@ local GuiSect = GameTab:AddSection({
     Name = "Roblox GUI"
 })
 
-GuiSect:AddToggle({
-    Name = "Disable Robux Purchase Prompts",
-    Default = false,
-    Save = true,
-    Flag = "PURCHASEPROMPT",
-    Callback = function(Value)
-        Svc.Core.PurchasePrompt.Enabled = not Value
-    end
-})
+-- GuiSect:AddToggle({
+--     Name = "Disable Robux Purchase Prompts",
+--     Default = false,
+--     Save = true,
+--     Flag = "PURCHASEPROMPT",
+--     Callback = function(Value)
+--         Svc.Core.PurchasePrompt.Enabled = not Value
+--     end
+-- })
 
 if game.PlaceId == 3956818381 then -- Ninja Legends
     -- Values
@@ -3238,7 +3238,7 @@ elseif game.PlaceId == 6953291455 then -- Eating Simulator
                 task.wait(1)
                 r:WaitForChild("equip"):FireServer(v, "Ranks")
                 Lp.PlayerGui.Main.Frames.Store.Visible = false
-                game:GetService("CoreGui").PurchasePrompt.Enabled = false
+                -- game:GetService("CoreGui").PurchasePrompt.Enabled = false
                 buyNext = false
             end
             if v == Lp.Data.EquippedRank.Value then
